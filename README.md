@@ -56,8 +56,10 @@ python3 classificator.py
 ```
 
 ```sh
-POST request http://localhost:8080/classify
+POST request http://localhost:8080/classify*
 ```
+*with the image encoded as base64
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
