@@ -55,6 +55,9 @@ pip3 install -r requirements.txt
 python3 classificator.py
 ```
 
+```sh
+POST request http://localhost:8080/classify
+```
 <!-- CONTRIBUTING -->
 ## Contributing
 
