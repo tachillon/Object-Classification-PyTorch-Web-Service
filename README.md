@@ -1,23 +1,8 @@
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
+  * [Requirements](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -29,8 +14,8 @@
 ## About The Project
 Object classification using PyTorch as a web service
 
-### Built With
-cf. requirements.txt
+### Requirements
+See requirements.txt
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -48,19 +33,27 @@ pip/pip3 install virtualenv
  
 1. Clone the repo
 ```sh
-git clone https://github.com/github_username/repo.git
+git clone https://github.com/tachillon/Object_Classification_PyTorch_Web_Service
 ```
-2. Build the docker
+2. Create a virtualenv
 ```sh
-docker build -t <name>:<myTag> .
+python3 -m venv .venv
+```
+3. Activate your virtualenv
+```sh
+source .venv/bin/activate
+```
+4. Install requirements
+```sh
+pip3 install -r requirements.txt
 ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Log into the docker
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+```sh
+python3 classificator.py
+```
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -83,20 +76,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Achille-Tâm GUILCHARD - achilletamguilchard@gmail.com
 
-Project Link: [https://github.com/github_username/repo](https://github.com/github_username/repo)
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+Project Link: [https://github.com/tachillon/Object_Classification_PyTorch_Web_Service](https://github.com/tachillon/Object_Classification_PyTorch_Web_Service)
