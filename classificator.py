@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 # usage: python3 classificator.py
+# request to do: POST http://localhost:8080/classify
 
-from PIL import Image
-from io import BytesIO
+from   PIL import Image
+from   io import BytesIO
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.optim import lr_scheduler
+from   torch.optim import lr_scheduler
 import torchvision
-from torchvision import datasets, models, transforms
+from   torchvision import datasets, models, transforms
 import torchvision.transforms as T
 import cv2
 import numpy as np
@@ -39,7 +40,7 @@ def make_square(image,square_size):
   else:
     differ=width
   differ+=4
-  mask = np.zeros((differ,differ, 3), dtype="uint8")   
+  mask = np.zeros((differ,differ, 3), dtype="uint8") 
   x_pos=int((differ-width)/2)
   y_pos=int((differ-height)/2)
   mask[y_pos:y_pos+height,x_pos:x_pos+width]=image[0:height,0:width]
@@ -78,7 +79,7 @@ def classify_img(img_bin, model):
     jpg_as_np = np.frombuffer(img_bin, dtype=np.uint8)
     img       = cv2.imdecode(jpg_as_np, flags=1)
     img       = make_square(img,229)
-    cv2.imwrite("/tmp/img.jpg", img) # TODO: stop writing image on disk
+    cv2.imwrite("/tmp/img.jpg", img) # TODO: stop writing/reading image from the disk
     img = image_loader("/tmp/img.jpg")
     os.remove("/tmp/img.jpg")
     
@@ -124,10 +125,12 @@ class myHandler(BaseHTTPRequestHandler):
         if self.path == '/classify':
             doClassification(self)
 
+# Model loading
 AI_info   = load_model()
 model     = AI_info[0]
 labels_py = AI_info[1]
 
+# Start the web service
 server = HTTPServer(('0.0.0.0', serverPort), myHandler)
 print ('Started httpserver on port ', serverPort)
 #Wait forever for incoming http requests
