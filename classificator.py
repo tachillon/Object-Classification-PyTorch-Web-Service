@@ -2,14 +2,14 @@
 # usage: python3 classificator.py
 # request to do: POST http://localhost:8080/classify
 
-from PIL import Image
-from io import BytesIO
+from   PIL import Image
+from   io import BytesIO
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.optim import lr_scheduler
+from   torch.optim import lr_scheduler
 import torchvision
-from torchvision import datasets, models, transforms
+from   torchvision import datasets, models, transforms
 import torchvision.transforms as T
 import cv2
 import numpy as np
