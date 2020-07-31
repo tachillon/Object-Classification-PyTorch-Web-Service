@@ -31,8 +31,7 @@ loader = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])  # transform it into a torch tensor
 
-# Resize an image to a given square size while preserving width and height
-# ratio
+# Resize an image to a given square size while preserving width and height ratio
 def make_square(image, square_size):
     height = np.size(image, 0)
     width  = np.size(image, 1)
@@ -130,7 +129,6 @@ class myHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         if self.path == '/classify':
             doClassification(self)
-
 
 # Model loading
 AI_info   = load_model()
