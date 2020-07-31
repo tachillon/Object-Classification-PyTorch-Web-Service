@@ -6,6 +6,7 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
+  * [Using Docker](#using-docker)
 * [Usage](#usage)
 * [License](#license)
 * [Contact](#contact)
@@ -47,14 +48,23 @@ source .venv/bin/activate
 ```sh
 pip3 install -r requirements.txt
 ```
+### Using Docker
+1. Build the Docker container
+```sh
+docker build -t <container_name>:<tag> .
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
+1. Regular usage
 ```sh
 python3 classificator.py
 ```
-
+2. Using Docker
+```sh
+docker run --rm -p 8080:8080 <container_name>:<tag>
+```
+3. Do the POST request
 ```sh
 POST request http://localhost:8080/classify*
 ```
