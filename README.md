@@ -34,7 +34,7 @@ pip/pip3 install virtualenv
  
 1. Clone the repo
 ```sh
-git clone https://github.com/tachillon/Object_Classification_PyTorch_Web_Service
+git clone https://github.com/tachillon/Object-Classification-PyTorch-Web-Service
 ```
 2. Create a virtualenv
 ```sh
